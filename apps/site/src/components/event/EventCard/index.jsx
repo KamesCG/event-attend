@@ -19,4 +19,13 @@ const EventCard = props => {
   );
 };
 
+const styles = {
+  eventCard: {
+    boxShadow: 1,
+    m: 3,
+    p: 3,
+    width: [1, 1, '50%', '33.333%'],
+  },
+};
+
 export default EventCard;

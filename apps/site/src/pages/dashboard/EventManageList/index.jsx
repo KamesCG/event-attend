@@ -1,5 +1,5 @@
 import events from 'data/events';
-import {EventCard} from 'components';
+import {EventListItem} from 'components';
 
 /* --- Components --- */
 const HomePage = props => (
@@ -15,7 +15,7 @@ const Showcase = props => (
     column
     sx={{
       color: 'white',
-      py: 5,
+      py: 4,
     }}>
     <Atom.BackgroundGradient gradient="blue" />
     <Atom.BackgroundImage
@@ -23,15 +23,15 @@ const Showcase = props => (
       ratio={0.0001}
       sx={{opacity: 0.2}}
     />
-    <Atom.Heading giga>All Events</Atom.Heading>
+    <Atom.Heading giga>Manage Events</Atom.Heading>
   </Atom.Flex>
 );
 
 const FeaturedEvents = props => (
   <Atom.Container sx={{py: 4}}>
-    <Atom.Flex>
+    <Atom.Flex column sx={{flex: 1, width: '100%'}}>
       {events.map(evt => (
-        <EventCard {...evt} />
+        <EventListItem {...evt} />
       ))}
     </Atom.Flex>
   </Atom.Container>

@@ -29,16 +29,16 @@ const RegionAside = ({sx, ...props}) => {
 
 const menu = [
   {
-    label: 'Overview',
+    label: 'Events',
     to: '/dashboard',
   },
   {
-    label: 'Contracts',
-    to: '/dashboard/contracts',
+    label: 'Checkin',
+    to: '/dashboard/checkin',
   },
   {
-    label: 'Users',
-    to: '/dashboard/users',
+    label: 'Manage',
+    to: '/dashboard/manage',
   },
 ];
 
