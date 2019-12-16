@@ -40,12 +40,12 @@ export default [
   {
     alias: 'event-3',
     title: 'Hackathon',
-    subtitle: 'An interesting event tagline and hook.',
+    subtitle: 'The biggest event of the year.',
     date: 'December 28, 2019',
     price: '55',
     token: 'DAI',
     content:
-      'Nam nulla mauris, dictum sit amet semper a, egestas vehicula nulla. Pellentesque tortor magna, varius in augue ac, hendrerit rhoncus metus. Cras feugiat velit in eros imperdiet fringilla. Nulla bibendum nulla eu porttitor pretium.',
+      'A 3 day Deep Dive Immersion into Decentralized Applications. Your opportunity to meet with developers from all over the world, gain prizes, challenge yourself, explore different projects in the Ethereum ecosystem and create your first DApp. In its 3rd Edition, ETHCITYX will award over 20,000 in prizes for the best implementations of our protocols and projects. Come and join us in this journey of discovery, we can can BUIDL together a stronger Web3 Infrastructure. Together, we can find better solutions to scale and how to achieve user adoption. This 3 day event will be just for you: whether if you$re here to explore and participate in the workshops or to clone new repositories and contribute to developing ETH 2.0. Coffee, food, high-octane WiFi and infrastructure is on us. Now we need your creativity and logical thinking. Doors open at 6:00pm on Friday. Submissions close at 8:00am on Sunday.',
     image:
       'https://i.imgur.com/SweBMcL.jpg',
     imageBackground:
