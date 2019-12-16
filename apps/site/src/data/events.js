@@ -1,8 +1,8 @@
 export default [
   {
     alias: 'event-1',
-    title: 'Education Event',
-    subtitle: 'An interesting event tagline and hook.',
+    title: 'Education Event 12345 ',
+    subtitle: 'A deep dive to Ethereum.',
     date: 'December 28, 2019',
     price: '35',
     token: 'DAI',
