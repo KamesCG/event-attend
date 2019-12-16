@@ -1,3 +1,3 @@
-# Decentralized Application Boilerplate
+# EventAttend
 
-A decentralized application starter kit for React developers.
+A Ethereum ticketing system built with WalletConnect and 3Box.

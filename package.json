@@ -1,6 +1,6 @@
 {
-  "name": "walletconnect-ticketing-system",
-  "desription": "a ticketing system for walletconnect enabled wallets",
+  "name": "event-attend-monorepo",
+  "description": "decentralized application for event registration",
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
