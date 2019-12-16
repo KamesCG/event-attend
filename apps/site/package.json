@@ -1,6 +1,6 @@
 {
-  "name": "eventhub",
-  "description": "Install the MetaMask snap",
+  "name": "event-attend",
+  "description": "decentralized application for event registration",
   "author": "kames",
   "private": false,
   "version": "0.0.1",
