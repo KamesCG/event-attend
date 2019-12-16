@@ -1,15 +1,22 @@
 {
-  "name": "ethers-react-system",
-  "description": "Ethers Interface & Effects Management System",
+  "name": "@ethers-react/web3connect",
+  "description": "Ethers React Provider Manager",
   "version": "0.0.1",
   "author": "Kames <info@kamescg.com> (https://www.kamescg.com)",
-  "homepage": "https://github.com/kamescg/ethers-react-system",
+  "homepage": "https://github.com/horizin/ethers-react",
+  "license": "MIT",
+  "keywords": [
+    "ethereum",
+    "ethers",
+    "react",
+    "react-hooks",
+    "hooks",
+    "javascript",
+    "context",
+    "dapp"
+  ],
   "main": "dist/index.js",
   "main:src": "src/index.js",
-  "keywords": [
-    "ethers-react-system"
-  ],
-  "license": "MIT",
   "scripts": {
     "build": "cross-env BABEL_ENV=production babel src --out-dir dist",
     "bundle": "webpack --config ./config/webpack.config.js",
@@ -27,7 +34,10 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "ethers": "^4.0.37",
-    "prop-types": "^15.7.2"
+    "fortmatic": "^1.0.1",
+    "prop-types": "^15.7.2",
+    "walletconnect": "^0.7.28",
+    "web3connect": "^1.0.0-beta.25"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
@@ -56,7 +66,7 @@
     "node": ">=8.3"
   },
   "bugs": {
-    "url": "https://github.com/kamescg/ethers-react-system/issues",
+    "url": "https://github.com/kamescg/@ethers-react/core/issues",
     "email": "info@kamescg.com"
   },
   "contributors": [
@@ -117,7 +127,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kamescg/ethers-react-system"
+    "url": "https://github.com/kamescg/@ethers-react/core"
   },
   "xo": {
     "prettier": false,

@@ -6,7 +6,7 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![made with lass](https://img.shields.io/badge/made_with-lass-95CC28.svg)](https://lass.js.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![npm downloads](https://img.shields.io/npm/dt/react-context-portal.svg)](https://npm.im/ethers-react-system)
+[![npm downloads](https://img.shields.io/npm/dt/react-context-portal.svg)](https://npm.im/@ethers-react/core)
 
 Components
 
