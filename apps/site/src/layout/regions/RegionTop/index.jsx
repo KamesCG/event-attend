@@ -42,8 +42,10 @@ export default props => (
 
     {/* Right */}
     <Atom.Flex alignCenter>
-      <Atom.Box sx={{mx: 3}}>{/* <ColorMode /> */}</Atom.Box>
-      {/* <Authenticate display="avatar" /> */}
+      <Atom.Box sx={{mx: 3}}>
+        <ColorMode />
+      </Atom.Box>
+      <Authenticate display="avatar" />
     </Atom.Flex>
   </Atom.Flex>
 );
