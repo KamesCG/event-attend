@@ -1,8 +1,7 @@
 {
-  "name": "site-metamask-snap-defi-automation",
-  "author": "Kames <info@kamescg.com>",
-  "homepage": ".",
+  "name": "eventhub",
   "description": "Install the MetaMask snap",
+  "author": "kames",
   "private": false,
   "version": "0.0.1",
   "scripts": {

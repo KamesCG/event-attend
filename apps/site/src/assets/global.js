@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: 'horizin',
+  siteName: 'EventAttend',
   contact: {
     email: 'info@kamescg.com',
     twitter: '@kamescg',

@@ -20,9 +20,17 @@ export default props => (
         <Molecule.Menu
           sx={{
             m: 2,
-            mx: 3,
+            mx: 1,
           }}
           items={[
+            {
+              label: 'Events',
+              to: '/events',
+            },
+            {
+              label: 'Create Event',
+              to: '/create/event',
+            },
             {
               label: 'Dashboard',
               to: '/dashboard',
@@ -34,10 +42,8 @@ export default props => (
 
     {/* Right */}
     <Atom.Flex alignCenter>
-      <Atom.Box sx={{mx: 3}}>
-        <ColorMode />
-      </Atom.Box>
-      <Authenticate display="avatar" />
+      <Atom.Box sx={{mx: 3}}>{/* <ColorMode /> */}</Atom.Box>
+      {/* <Authenticate display="avatar" /> */}
     </Atom.Flex>
   </Atom.Flex>
 );

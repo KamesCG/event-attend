@@ -4,13 +4,15 @@ import {Router} from '@reach/router';
 /* --- Local --- */
 import {Site} from 'templates';
 
-import {Home, About} from 'pages';
+import {Home, About, CreateEvent, Event} from 'pages';
 /* --- Component --- */
 const IndexPage = () => (
   <Site>
-    <Router width="100%" primary={false}>
+    <Router primary={false} style={{width: '100%'}}>
       <Home path="/" />
       <About path="/about" />
+      <Event path="/event/:alias" />
+      <CreateEvent path="/create/event" />
     </Router>
   </Site>
 );

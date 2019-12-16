@@ -293,6 +293,7 @@ module.exports = function(webpackEnv) {
         'react-native': 'react-native-web',
         // Assets
         assets: path.resolve(__dirname, '../src/assets'),
+        data: path.resolve(__dirname, '../src/data'),
         helpers: path.resolve(__dirname, '../src/assets/helpers'),
         global: path.resolve(__dirname, '../src/assets/global'),
         // Application

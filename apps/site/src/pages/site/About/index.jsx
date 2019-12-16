@@ -1,5 +1,5 @@
 import {Site} from 'templates';
-import {CodeHighlight, Markdown} from '@horizin/design-system-molecules';
+import {CodeHighlight} from '@horizin/design-system-molecules';
 
 /* --- Component --- */
 export default () => (
@@ -8,7 +8,7 @@ export default () => (
     sxMain={{alignItems: 'center', justifyContent: 'center'}}>
     <Atom.Container sx={{maxWidth: [1, 1, 780, 780]}}>
       <Atom.Box sx={{py: 3, textAlign: 'center'}}>
-        <Atom.Heading giga>horizin</Atom.Heading>
+        <Atom.Heading giga>EventHub</Atom.Heading>
         <CodeHighlight>
           git clone git@github.com:rapid-eth/rapid-adventures
         </CodeHighlight>

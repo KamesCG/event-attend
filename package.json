@@ -1,6 +1,6 @@
 {
-  "name": "decentralized-application",
-  "desription": "prototype decentralized applications",
+  "name": "walletconnect-ticketing-system",
+  "desription": "a ticketing system for walletconnect enabled wallets",
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
