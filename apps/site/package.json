@@ -2,6 +2,7 @@
   "name": "event-attend",
   "description": "decentralized application for event registration",
   "author": "kames",
+  "homepage": "https://kamescg.github.io/event-attend",
   "private": false,
   "version": "0.0.1",
   "scripts": {

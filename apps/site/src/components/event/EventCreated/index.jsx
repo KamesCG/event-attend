@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import {ethers, utils} from 'ethers';
 import AbstractConference from 'contracts/AbstractConference';
+import {WalletPurchaseTicket} from 'components';
 
 const EventCreated = props => {
   const [inited, setInited] = useState();
@@ -67,7 +68,8 @@ const EventCreated = props => {
       </Atom.Heading>
       <Atom.Heading>creator: {props.creator}</Atom.Heading>
       <Atom.Heading>contract: {props.contract}</Atom.Heading>
-      <Atom.Button
+      <WalletPurchaseTicket contract={props.contract} />
+      {/* <Atom.Button
         onClick={() =>
           contract.register({
             value: '0x00',
@@ -77,7 +79,7 @@ const EventCreated = props => {
         }
         sx={{mt: 3}}>
         Purchase Ticket
-      </Atom.Button>
+      </Atom.Button> */}
     </Atom.Flex>
   );
 };

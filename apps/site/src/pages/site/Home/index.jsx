@@ -9,7 +9,7 @@ const HomePage = props => {
     <Atom.Box sx={{width: '100%'}}>
       <Showcase />
       <EventList />
-      <FeaturedEvents />
+      {/* <FeaturedEvents /> */}
     </Atom.Box>
   );
 };

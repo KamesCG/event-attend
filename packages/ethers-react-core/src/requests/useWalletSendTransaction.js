@@ -7,6 +7,7 @@
 
 /* --- Global --- */
 import { useEffect } from 'react';
+import { ethers, utils } from 'ethers';
 
 /* --- Local --- */
 import {
@@ -21,13 +22,21 @@ export const useWalletSendTransaction = (state, dispatch) => {
       const runEffect = async () => {
         let signature;
         const transaction = state.store.transactions[0];
-
+        console.log(transaction, 'transactiontransactiontransaction');
         try {
           switch (state.provider.source) {
             case 'walletconnect':
+              console.log(
+                utils.hexlify(10000000),
+                'utils.hexlify(10000000)utils.hexlify(10000000)'
+              );
               signature = await state.wallet.sendTransaction({
+                to: transaction.payload.to,
                 from: state.address,
-                ...transaction.payload
+                data: '0x', // Required
+                // gasPrice: utils.hexlify(7600000), // Optional
+                // gasLimit: utils.hexlify(7600000), // Optional
+                value: '0x00' // Optional
               });
               break;
             default:
