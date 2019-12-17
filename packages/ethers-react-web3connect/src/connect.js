@@ -3,18 +3,18 @@ import WalletConnectProvider from '@walletconnect/web3-provider';
 import Fortmatic from 'fortmatic';
 
 const web3Connect = new Web3Connect.Core({
-  network: 'mainnet', // optional
+  network: 'mainnet',
   providerOptions: {
     walletconnect: {
-      package: WalletConnectProvider, // required
+      package: WalletConnectProvider,
       options: {
-        infuraId: '99aa5c18ffcd4d6a83bb9c4d911d9e7d' // required
+        infuraId: '99aa5c18ffcd4d6a83bb9c4d911d9e7d'
       }
     },
     fortmatic: {
-      package: Fortmatic, // required
+      package: Fortmatic,
       options: {
-        key: 'FORTMATIC_KEY' // required
+        key: 'FORTMATIC_KEY'
       }
     }
   }
@@ -22,7 +22,7 @@ const web3Connect = new Web3Connect.Core({
 
 // subscribe to connect
 web3Connect.on('connect', provider => {
-  const web3 = new Web3(provider); // add provider to web3
+  console.log(provider, 'provider');
 });
 
 // subscribe to close

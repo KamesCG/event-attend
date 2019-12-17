@@ -5,6 +5,7 @@
 /* --- Global --- */
 import {ColorMode} from 'common';
 import {Authenticate} from '3box-ui-system';
+import {web3Connect} from '@ethers-react/web3connect';
 
 /* --- Component --- */
 export default props => (
@@ -46,6 +47,9 @@ export default props => (
         <ColorMode />
       </Atom.Box>
       <Authenticate display="avatar" />
+      <Atom.Button onClick={() => web3Connect.toggleModal()}>
+        Select Wallet
+      </Atom.Button>
     </Atom.Flex>
   </Atom.Flex>
 );

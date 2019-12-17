@@ -1,10 +1,14 @@
 import {FormEventSearch} from 'forms';
+import {EventCard} from 'components';
 import events from 'data/events';
+import {EventDeploy, MeetupEvents} from 'components';
+
 /* --- Components --- */
 const HomePage = props => {
   return (
     <Atom.Box sx={{width: '100%'}}>
       <Showcase />
+      <EventList />
       <FeaturedEvents />
     </Atom.Box>
   );
@@ -55,6 +59,22 @@ const Showcase = props => {
   );
 };
 
+const EventList = props => {
+  return (
+    <Atom.Flex>
+      <MeetupEvents />
+    </Atom.Flex>
+  );
+};
+
+const EventDeploying = props => {
+  return (
+    <Atom.Flex>
+      <EventDeploy />
+    </Atom.Flex>
+  );
+};
+
 const FeaturedEvents = props => {
   return (
     <Atom.Container sx={{py: 4}}>
@@ -64,27 +84,6 @@ const FeaturedEvents = props => {
         ))}
       </Atom.Flex>
     </Atom.Container>
-  );
-};
-
-const EventCard = props => {
-  return (
-    <Atom.Flex column sx={styles.eventCard}>
-      <Atom.Box sx={{height: 200}}>
-        <Atom.BackgroundImage src={props.image} sx={{}} />
-      </Atom.Box>
-      <Atom.Box>
-        <Atom.Heading xxl>{props.title}</Atom.Heading>
-        <Atom.Heading sm>{props.subtitle}</Atom.Heading>
-        <Atom.Paragraph>{props.content}</Atom.Paragraph>
-        <Atom.Flex between sx={{mt: 3}}>
-          <Atom.Button>Purchase Ticket</Atom.Button>
-          <Molecule.Link to={`/event/${props.alias}`}>
-            <Atom.Button green>View Event</Atom.Button>
-          </Molecule.Link>
-        </Atom.Flex>
-      </Atom.Box>
-    </Atom.Flex>
   );
 };
 

@@ -1,3 +1,5 @@
+import {WalletPurchaseTicket} from 'components';
+
 const EventCard = props => {
   return (
     <Atom.Flex column sx={styles.eventCard}>
@@ -9,7 +11,8 @@ const EventCard = props => {
         <Atom.Heading sm>{props.subtitle}</Atom.Heading>
         <Atom.Paragraph>{props.content}</Atom.Paragraph>
         <Atom.Flex between sx={{mt: 3}}>
-          <Atom.Button>Purchase Ticket</Atom.Button>
+          {/* <Atom.Button>Purchase Ticket</Atom.Button> */}
+          <WalletPurchaseTicket />
           <Molecule.Link to={`/event/${props.alias}`}>
             <Atom.Button green>View Event</Atom.Button>
           </Molecule.Link>

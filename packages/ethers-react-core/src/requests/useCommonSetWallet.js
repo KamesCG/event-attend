@@ -6,36 +6,59 @@
  */
 
 /* --- Global --- */
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { ethers } from 'ethers';
+import WalletConnect from '@walletconnect/browser';
+
+import { SET_ADDRESS, SET_WALLET_SUCCESS } from '../types';
 
 /* --- Component --- */
 export const useCommonSetWallet = (state, dispatch) => {
-  const [isWalletReady, setWalletReady] = useState();
-
   useEffect(() => {
-    if (state.address) {
+    if (state.provider) {
       const runEffect = async () => {
         try {
-          const provider = await ethers.providers.Web3Provider(
-            window.web3.currentProvider
-          );
-          const wallet = provider.getSigner();
+          let address, provider, wallet;
+          switch (state.provider.source) {
+            case 'metamask':
+              provider = await new ethers.providers.Web3Provider(
+                state.provider.instance
+              );
+              wallet = provider.getSigner();
+              address = wallet.selectedAddress;
+              break;
+
+            case 'walletconnect':
+              wallet = new WalletConnect({
+                bridge: 'https://bridge.walletconnect.org'
+              });
+              address = wallet.accounts[0];
+
+              break;
+
+            default:
+              break;
+          }
+
           dispatch({
-            type: 'SET_WALLET_SUCCESS',
-            payload: wallet
+            type: SET_WALLET_SUCCESS,
+            payload: {
+              source: state.provider.source,
+              wallet
+            }
           });
-          setWalletReady(true);
+          dispatch({
+            type: SET_ADDRESS,
+            payload: address
+          });
         } catch (error) {
           dispatch({
             type: 'SET_WALLET_FAILURE',
             payload: error
           });
-          setWalletReady(false);
         }
       };
       runEffect();
     }
-  }, [state.address]);
-
-  return isWalletReady;
+  }, [state.provider]);
 };

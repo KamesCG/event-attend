@@ -43,7 +43,7 @@ p {
   font-family: Ubuntu;
   font-weight: normal;
   line-height: 1.5em;
-  word-break: break-all;
+  /* word-break: break-all; */
   width: auto;
 }
 
@@ -68,4 +68,14 @@ a,
 a:active,
 a:focus {
   outline: none; /* Works in Firefox, Chrome, IE8 and above */
+}
+
+#WEB3_CONNECT_MODAL_ID {
+  position: relative;
+  z-index: 1000;
+}
+
+#walletconnect-wrapper {
+  position: relative;
+  z-index: 10000;
 }

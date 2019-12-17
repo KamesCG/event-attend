@@ -6,7 +6,7 @@ const RegionAside = ({sx, ...props}) => {
         <Atom.Box>
           <Molecule.Link to="/">
             <Atom.Heading lg heavy sx={{mb: 0}}>
-              EventHub
+              EventAttend
             </Atom.Heading>
           </Molecule.Link>
         </Atom.Box>

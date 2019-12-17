@@ -17,25 +17,38 @@ import {
 /* --- Component --- */
 export const useWalletSignTransaction = (state, dispatch) => {
   useEffect(() => {
-    if (
-      state.provider &&
-      state.wallet &&
-      state.store.transactions &&
-      state.store.transactions.length > 0
-    ) {
+    if (state.store.transactions.length > 0) {
       const runEffect = async () => {
+        let signature;
         const transaction = state.store.transactions[0];
+
         try {
+          // switch (state.provider.source) {
+          //   case 'walletconnect':
+          //     signature = await state.wallet.sendTransaction(
+          //       transaction.payload
+          //     );
+          //     break;
+          //   case 'metamask':
+          //     signature = await state.wallet.sendTransaction(
+          //       transaction.payload
+          //     );
+          //     break;
+
+          //   default:
+          //     break;
+          // }
+
+          signature = await state.wallet.sendTransaction(transaction.payload);
+
           dispatch({
             type: WALLET_SIGN_TRANSACTION_SUCCESS,
-            id: messageRequest.id,
             payload: signature
           });
           setResponse(true);
         } catch (error) {
           dispatch({
             type: WALLET_SIGN_TRANSACTION_FAILURE,
-            id: messageRequest.id,
             payload: error
           });
           setResponse(false);

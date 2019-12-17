@@ -1,5 +1,6 @@
 /**
- * @function useWalletSendTransaction
+ * @function useWalletSignTransaction
+ * @description Watch Browser window object for Etheruem selected address.
  * @param {Object} state
  * @param {Object} dispatch
  */
@@ -16,32 +17,39 @@ import {
 /* --- Component --- */
 export const useWalletSendTransaction = (state, dispatch) => {
   useEffect(() => {
-    if (
-      state.provider &&
-      state.wallet &&
-      state.store.transactions &&
-      state.store.transactions.length > 0
-    ) {
+    if (state.store.transactions.length > 0) {
       const runEffect = async () => {
+        let signature;
         const transaction = state.store.transactions[0];
 
         try {
+          switch (state.provider.source) {
+            case 'walletconnect':
+              signature = await state.wallet.sendTransaction({
+                from: state.address,
+                ...transaction.payload
+              });
+              break;
+            default:
+              signature = await state.wallet.sendTransaction(
+                transaction.payload
+              );
+              break;
+          }
+
           dispatch({
             type: WALLET_SEND_TRANSACTION_SUCCESS,
-            id: messageRequest.id,
             payload: signature
           });
-          setResponse(true);
         } catch (error) {
+          console.log(error, '');
           dispatch({
             type: WALLET_SEND_TRANSACTION_FAILURE,
-            id: messageRequest.id,
             payload: error
           });
-          setResponse(false);
         }
       };
       runEffect();
     }
-  }, [state.store.messages]);
+  }, [state.store.transactions]);
 };

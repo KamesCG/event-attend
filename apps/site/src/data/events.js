@@ -8,8 +8,7 @@ export default [
     token: 'DAI',
     content:
       'Solidity is a programming language for writing Smart Contracts. In this session, you will learn how to build a simple contract based application using Solidity. Students will learn the syntax and some programming basics: types, variables, functions, and conditionals. The course is designed for beginners willing to learn about the basics of blockchain and smart contracts.  You will then learn all about the Solidity ecosystem, including syntax and advanced concepts such as source mappings, then apply them to build  your very first contract.',
-    image:
-      'https://imgur.com/gallery/6sQRw3E',
+    image: 'https://i.imgur.com/ucwdmnT.jpg',
     imageBackground:
       'https://images.unsplash.com/photo-1503428593586-e225b39bddfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE3MzYxfQ&auto=format&fit=crop&w=1950&q=80',
     images: [

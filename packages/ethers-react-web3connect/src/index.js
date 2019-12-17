@@ -1,1 +1,1 @@
-export { default as Web3connect } from 'web3connect';
+export { default as web3Connect } from './connect';

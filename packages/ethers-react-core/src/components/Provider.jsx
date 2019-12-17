@@ -16,34 +16,37 @@ import reducers from '../reducer';
 import { enhanceActions } from '../middleware/actions';
 import { initialize } from '../middleware/initialize';
 import * as RequestEffects from '../requests';
+import { useProviderSelect } from '../effects';
 /* --- Developer Messages --- */
 console.warn(
   'EthersProvider is not ready for production. Use at your discretion'
 );
 
 /* --- Component --- */
-const Provider = ({ children, contracts = [], provider = 'metamask' }) => {
+const Provider = ({
+  children,
+  contracts = [],
+  provider = 'metamask',
+  web3Connect
+}) => {
   const initialState = useContext(Context);
   const [state, dispatch] = useReducer(
     reducers,
     initialState,
     initialize(contracts, provider)
   );
+  console.log(state, 'Ethers Provider');
   /* --- Enhance Actions --- */
   const actions = enhanceActions(state, dispatch);
 
   /* --- Request Effects --- */
   Object.values(RequestEffects).map(effect => effect(state, dispatch));
 
-  console.log(state, 'Ethers Provider');
-
+  useProviderSelect(state, dispatch, web3Connect);
   return (
     <Context.Provider
       value={{
         ...state,
-        dispatch,
-        defaultProvider: provider,
-        enable: window.ethereum ? window.ethereum.enable : state.enable,
         ...actions
       }}
     >

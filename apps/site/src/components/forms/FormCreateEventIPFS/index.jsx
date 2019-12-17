@@ -34,12 +34,12 @@ const FormCreateEvent = props => {
       let contractAddress = '0x3a457f52d1ABa421fE240A0990f68506f29D53Ba';
       let contract = await new ethers.Contract(contractAddress, abi, wallet);
 
-      const amount = utils.hexlify(utils.parseEther(values.deposit));
-      const d = utils.hexlify(Number(values.limitOfParticipants));
-      const s = utils.hexlify(Number(utils.bigNumberify(values.coolingPeriod)));
+      const amount = utils.hexlify(utils.parseEther('1.0'));
+      const d = utils.hexlify(10);
+      const s = utils.hexlify(utils.bigNumberify(60 * 60 * 24 * 7));
 
       const tx = await contract.deploy(
-        values.title,
+        'EventTest',
         amount,
         d,
         s,
@@ -52,7 +52,24 @@ const FormCreateEvent = props => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Atom.Flex column sx={{flex: 1}}>
         <Atom.Heading sx={{mt: 4}}>Event</Atom.Heading>
-
+        <Molecule.Field
+          name="date"
+          variants={['text']}
+          type="date"
+          placeholder="Date"
+          disabled={isComplete}
+          register={register}
+          errors={errors}
+        />
+        <Molecule.Field
+          name="location"
+          variants={['text']}
+          label="Location"
+          placeholder="49 Bogart New York, New York"
+          disabled={isComplete}
+          register={register}
+          errors={errors}
+        />
         <Molecule.Field
           name="title"
           variants={['text']}
@@ -62,31 +79,45 @@ const FormCreateEvent = props => {
           errors={errors}
         />
         <Molecule.Field
-          name="deposit"
+          name="subtitle"
           variants={['text']}
-          type="number"
-          label="Deposit"
+          label="Tagline"
           disabled={isComplete}
           register={register}
           errors={errors}
         />
         <Molecule.Field
-          name="limitOfParticipants"
+          name="content"
           variants={['text']}
-          type="number"
-          label="Limit of Participants"
+          as="textarea"
+          label="Description"
+          sx={{
+            height: 180,
+          }}
           disabled={isComplete}
           register={register}
           errors={errors}
         />
+
+        <Atom.Heading sx={{mt: 4}}>Pricing</Atom.Heading>
+
         <Molecule.Field
-          name="coolingPeriod"
+          name="priceMinimum"
           variants={['text']}
-          type="number"
-          label="Cooling Period"
           disabled={isComplete}
           register={register}
           errors={errors}
+          label="Minimum"
+          placeholder="Set Minimum Bid (e.x. 25)"
+        />
+        <Molecule.Field
+          name="token"
+          variants={['text']}
+          disabled={isComplete}
+          register={register}
+          errors={errors}
+          label="Token"
+          placeholder="Select ERC20 Token (e.x. DAI)"
         />
 
         <Atom.Box sx={{mt: 4}}>
