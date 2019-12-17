@@ -1,3 +1,8 @@
 # EventAttend
 
-A Ethereum ticketing system built with WalletConnect and 3Box.
+A Ethereum ticketing system built with WalletConnect.
+
+Network: Goerli
+Libraries: WalletConnect, Kickback Contracts
+example: https://event-attend.netlify.com/
+
